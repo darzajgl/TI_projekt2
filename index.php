@@ -2,10 +2,11 @@
 
 session_start();
 
+
 require_once "db_config.php";
 require_once "functions.php";
 
-mysqli_report(MYSQLI_REPORT_STRICT);
+//mysqli_report(MYSQLI_REPORT_STRICT);
 
 if (isset($_POST['add'])) {
 //    print_r($_POST['product_id']);
@@ -54,51 +55,38 @@ try {
     <title>Sklep internetowy</title>
     <!-- style.css -->
     <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
     <!--koszyk z licznikiem-->
-    <nav>
-        <div class="nav-right">
-        <a href="cart.php" class="nav-item active">
-            <h4 class="px-10 cart">Koszyk:
-                <?php
-                if (isset($_SESSION['cart'])) {
-                    $count = count($_SESSION['cart']);
-                    echo "<span id='cart_count' class='text-warning bg-light'>$count</span>";
-                } else {
-                    echo "<span id='cart_count' class='text-warning bg-light'>0</span>";
-                }
-                ?>
-            </h4>
-        </a>
-        </div>
-    </nav>
+
 
 </head>
 
 <body>
-<!-- Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-        crossorigin="anonymous"></script>
-
-<div class="container-fluid">
-    <div class="row text-center py-5">
-                    <?php
-            $sql = "SELECT * FROM products";
-            $result = mysqli_query($connection, $sql);
-            while ($row = mysqli_fetch_assoc($result)) {
-
-                component($row['name'], $row['price'], $row['description'], $row['image'], $row['id']);
+<div id="logo">
+    <a href="cart.php" class="logo-item active">
+        <h4 class="px-10 cart">Koszyk:
+            <?php
+            if (isset($_SESSION['cart'])) {
+                $count = count($_SESSION['cart']);
+                echo "<span id='cart_count' class='text-warning bg-light'>$count</span>";
+            } else {
+                echo "<span id='cart_count' class='text-warning bg-light'>0</span>";
             }
             ?>
-        </div>
+        </h4>
+    </a>
+</div>
+</div>
+<div class="container-fluid">
+    <div class="row text-center py-5">
+        <?php
+        $sql = "SELECT * FROM products";
+        $result = mysqli_query($connection, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
+            component($row['name'], $row['price'], $row['description'], $row['image'], $row['id']);
+        }
+        ?>
     </div>
+</div>
 </body>
 </html>
 
