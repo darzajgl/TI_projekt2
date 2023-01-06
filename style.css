@@ -5,12 +5,13 @@ body {
     padding: 0;
     background: #eecda3;
     background: -webkit-linear-gradient(to right, #eecda3, #ef629f);
-    background: linear-gradient(to right,palegoldenrod, pink);
+    background: linear-gradient(to right, palegoldenrod, pink);
     min-height: 100vh;
 }
+
 /*button submit*/
 button[type="submit"] {
-    background: linear-gradient(orange, red);
+    background: linear-gradient(#ef9e0b, #04de38);
     color: white;
     font-size: 12px;
     height: 30px;
@@ -18,43 +19,55 @@ button[type="submit"] {
     border: none;
     border-radius: 4px;
 }
+
+.right-button {
+    display: block;
+    text-align: right;
+
+}
+
 /* Zdjęcie produktu */
 /*.img {*/
 /*    width: 100%;*/
 /*    height:auto;*/
 /*}*/
+
+
 /*pojemnik*/
-.container{
+.container {
     /*display:table;*/
-    height:100%;
-    width:auto;
+    height: 100%;
+    width: auto;
 }
+
 /*nawigacja*/
 logo {
     text-align: right;
     display: flex;
     align-items: center;
-    background-color: #ffb3b3; /* czerwony */
+    background-color: #b92323; /* czerwony */
 }
 
 .logo-item {
     text-decoration: none;
-    color: #ff8080; /* pomarańczowy */
+    color: #8091ff; /* pomarańczowy */
     font-size: 1.2em;
 }
 
 .logo-item.active {
-    color: #7df59f;
+    color: #7d91f5;
 }
+
 .cart {
     display: flex;
     align-items: center;
 }
 
 #cart_count {
+    color: #1B3309;
     padding: 0.2em 0.5em;
     border-radius: 50%;
-    background-color: #22ff00;
+
 }
 
 nav ul {
@@ -97,6 +110,7 @@ nav .logo {
     border: 2px solid #1B3309;
     display: flex;
     border-radius: 5px;
+    clear: both;
 }
 
 .box-left {
@@ -155,7 +169,7 @@ nav .logo {
     width: 120px;
     height: 30px;
     font-size: 14px;
-    background: linear-gradient(#1B3309, #62C51B);
+    background: linear-gradient(#1B3309, #1b4bc5);
     border-radius: 30px;
 }
 
@@ -163,12 +177,12 @@ nav .logo {
 /*****formularz*******************************************/
 
 form {
-    .box;
-    /*width: 100%;*/
-    /*background-color: #E9F6DF;*/
-    /*padding: 20px;*/
-    /*border: 2px solid #62C51B;*/
-    /*border-radius: 5px;*/
+
+    width: 100%;
+    background-color: #E9F6DF;
+    padding: 20px;
+    border: 2px solid #62C51B;
+    border-radius: 5px;
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
@@ -176,7 +190,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-    border: 1px solid #62C51B;
+    border: 1px solid #1bc537;
     border-radius: 4px;
 }
 
@@ -188,4 +202,24 @@ h2 {
 
 .error {
     color: red;
+}
+
+table {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.table-total {
+    font-weight: bold;
 }

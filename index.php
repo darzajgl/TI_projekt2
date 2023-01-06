@@ -2,7 +2,6 @@
 
 session_start();
 
-
 require_once "db_config.php";
 require_once "functions.php";
 
@@ -55,12 +54,10 @@ try {
     <title>Sklep internetowy</title>
     <!-- style.css -->
     <link rel="stylesheet" href="style.css">
-    <!--koszyk z licznikiem-->
-
-
 </head>
 
 <body>
+<!--<a href="index.php" onclick="--><?php //session_destroy(); ?><!--">wyczyść sesję</a>-->
 <div id="logo">
     <a href="cart.php" class="logo-item active">
         <h4 class="px-10 cart">Koszyk:
@@ -77,7 +74,7 @@ try {
 </div>
 </div>
 <div class="container-fluid">
-    <div class="row text-center py-5">
+<!--    <div class="row text-center py-5">-->
         <?php
         $sql = "SELECT * FROM products";
         $result = mysqli_query($connection, $sql);
