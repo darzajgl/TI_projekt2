@@ -122,9 +122,10 @@ nav .logo {
 }
 
 .box-image {
-    width: 150px;
-    height: 150px;
+    width: auto;
+    height: calc(100% - 40px);
     object-fit: cover;
+    padding-bottom: 10px;
 }
 
 .box-center {
@@ -157,17 +158,17 @@ nav .logo {
 }
 
 .box-price {
-    margin-top: 90px;
+    margin-top: 70px;
     margin-right: 10px;
     font-size: 16px;
 }
 
 .box-button {
-    /*padding: 20px;*/
-    margin-bottom: 60px;
+    padding: 20px;
+    margin-bottom: 50px;
     margin-right: 10px;
     width: 120px;
-    height: 30px;
+    height: 20px;
     font-size: 14px;
     background: linear-gradient(#1B3309, #1b4bc5);
     border-radius: 30px;

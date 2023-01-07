@@ -76,11 +76,8 @@ if (empty($city)) {
 
 // Tworzenie wiadomości
 $to = $email;
-
 $from = 'SKLEP ROWEROWY - PROJEKT TI Zajglic no-reply@localhost';
-
 $replyTo = 'Biuro biuro@localhost';
-
 $subject = 'Potwierdzenie zamówienia';
 
 $message = '
@@ -138,8 +135,6 @@ $headers = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-Type: text/html; charset=utf-8' . "\r\n";
 $headers .= 'From: ' . $from . "\r\n";
 $headers .= 'Reply-To: ' . $replyTo . "\r\n";
-
-//mail($to, $subject, $message, $headers);
 
 if(mail($to, $subject, $message, $headers)){
     header('Location: order_confirm.php');

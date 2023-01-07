@@ -7,23 +7,7 @@ session_start();
 //    header("Location: index.php");
 //    exit;
 //}
-//    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
-//    if (empty($email)) {
-//        $_SESSION['email'] = $_POST['email'];
-//        echo "email jest pusty";
-////        header('Location: index.php');
-//
-//    } else {
-//        echo $_SESSION['email'];
-//        require_once 'db_config.php';
-//        $connection = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
-//
-//        if (!$connection) {
-//            die("Połączenie z bazą danych nie powiodło się: " . mysqli_connect_error());
-//        }
-//
-//    }
 ?>
 
 <!DOCTYPE html>

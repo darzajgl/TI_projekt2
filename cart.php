@@ -56,49 +56,54 @@ if (isset($_POST['remove'])) {
 <br>
 <h5>MÓJ KOSZYK</h5>
 <class id="container">
-         <?php
-        $total_amount = 0;
-        if (isset($_SESSION['cart'])) {
-            $product_id = array_column($_SESSION['cart'], 'product_id');
+    <?php
+    $total_amount = 0;
+    if (isset($_SESSION['cart'])) {
+        $product_id = array_column($_SESSION['cart'], 'product_id');
 
-            $sql = "SELECT * FROM products";
-            $result = mysqli_query($connection, $sql);
-            while ($row = mysqli_fetch_assoc($result)) {
-                foreach ($product_id as $id) {
-                    if ($row['id'] == $id) {
-                        cartItem($row['name'], $row['price'], $row['image'], $row['id']);
-                        $total_amount += (int)$row['price'];
-                    }
+        $sql = "SELECT * FROM products";
+        $result = mysqli_query($connection, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
+            foreach ($product_id as $id) {
+                if ($row['id'] == $id) {
+                    cartItem($row['name'], $row['price'], $row['image'], $row['id']);
+                    $total_amount += (int)$row['price'];
                 }
             }
-        } else {
-            echo "<h5>Koszyk jest pusty</h5>";
         }
-        ?>
+    } else {
+        echo "<h5>Koszyk jest pusty</h5>";
+    }
+    ?>
     </div>
 
-
-    <hr>
-    <h5>SZCZEGÓŁY ZAMÓWIENIA</h5>
+    <h5>PODSUMOWANIE ZAMÓWIENIA</h5>
 
     <div class="box">
-        <?php
-        if (isset($_SESSION['cart'])) {
-            $count = count($_SESSION['cart']);
-            echo "<h5>Cena za $count produktów: $total_amount PLN</h5>";
-        } else {
-            echo "<h5>Brak produktów w koszyku</h5>";
-        }
-        ?>
+        <div class="box-left">
+            <?php
+            if (isset($_SESSION['cart'])) {
+                $count = count($_SESSION['cart']);
+                echo "<h5>Razem produktów: $count</h5>";
+            } else {
+                echo "<h5>Brak produktów w koszyku</h5>";
+            }
+            ?>
+        </div>
         <div class="box-center">
             <h5>Opłata za wysyłkę: Za darmo!</h5>
         </div>
         <div class="box-right">
-            <h5>Całkowita cena: <?php echo $total_amount; ?> PLN</h5>
+            <?php
+            if (isset($_SESSION['cart'])) {
+                $count = count($_SESSION['cart']);
+                echo "<h5><br>Całkowita należność</br><b>$total_amount PLN<b/></h5>";
+            } else {
+                echo "<h5></h5>";
+            }
+            ?>
         </div>
     </div>
-    </div>
-
 </class>
 
 <fieldset>
