@@ -2,7 +2,7 @@
 
 function component($product_name, $product_price, $product_description, $product_image, $product_id)
 {
-    $element = ' 
+    $component = ' 
  <form action="index.php" method="POST">
     <div class="box">
         <div class="box-left">
@@ -21,9 +21,8 @@ function component($product_name, $product_price, $product_description, $product
 </div>
   ';
 
-    echo $element;
+    echo $component;
 }
-
 
 function cartItem($product_name, $product_price, $product_image, $product_id)
 {
@@ -49,5 +48,4 @@ function cartItem($product_name, $product_price, $product_image, $product_id)
     echo $item;
 }
 
-//<div class="row">
 ?>

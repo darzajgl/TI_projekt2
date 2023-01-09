@@ -1,10 +1,11 @@
 <?php
 session_start();
 require_once 'functions.php';
-//if (isset($_SESSION['error_server'])) {
-//    echo $_SESSION['error_server'];
-//    unset($_SESSION['error_server']);
-//}
+
+if (isset($_SESSION['error_server'])) {
+    echo $_SESSION['error_server'];
+    unset($_SESSION['error_server']);
+}
 if (empty($_SESSION['cart'])) {
     // przekierowanie użytkownika na stronę główną
     header("Location: index.php");
@@ -106,7 +107,9 @@ if (empty($_SESSION['cart'])) {
     </fieldset>
     <fieldset>
         <!--        <div class="g-recaptcha" data-sitekey="6Lcz2Z0jAAAAALipOlsa3fPD1iNdwUzZ41M5RHG4"></div>-->
-        <input type="submit" class="btn-danger" value="Złóż zamówienie">
+        <input type="submit" class="btn btn-danger" value="Złóż zamówienie">
+        <br>
+        <hr>
         <a href="cart.php">Wróć do koszyka</a>
     </fieldset>
 

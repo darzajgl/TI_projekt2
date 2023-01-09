@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 require_once "db_config.php";
@@ -31,7 +30,6 @@ if (isset($_POST['remove'])) {
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pl-PL">
 <head>
@@ -51,7 +49,6 @@ if (isset($_POST['remove'])) {
         ?>
     </form>
 </div>
-
 
 <br>
 <h5>MÓJ KOSZYK</h5>
@@ -106,9 +103,9 @@ if (isset($_POST['remove'])) {
     </div>
 </class>
 
-<fieldset>
+<br>
+<hr>
     <a href="index.php">Wróć do strony sklepu</a>
-</fieldset>
 </body>
 </html>
 

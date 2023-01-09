@@ -14,7 +14,6 @@ if (!$connection) {
     die("Połączenie z bazą danych nie powiodło się: " . mysqli_connect_error());
 }
 
-
 // zamknięcie połączenia z bazą danych
 mysqli_close($connection);
 

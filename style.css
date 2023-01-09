@@ -5,35 +5,40 @@ body {
     padding: 0;
     background: #eecda3;
     background: -webkit-linear-gradient(to right, #eecda3, #ef629f);
-    background: linear-gradient(to right, palegoldenrod, pink);
+    background: linear-gradient(45deg, palegoldenrod, pink);
     min-height: 100vh;
 }
 
 /*button submit*/
 button[type="submit"] {
-    background: linear-gradient(#ef9e0b, #04de38);
+    background: linear-gradient(#85e0ac, #42de04);
     color: white;
     font-size: 12px;
-    height: 30px;
+    height: auto;
     width: auto;
     border: none;
     border-radius: 4px;
 }
 
-.right-button {
-    display: block;
-    text-align: right;
-
+button[type="submit"]:hover {
+    background: linear-gradient(#42de04, #80ffa4);
+    cursor: pointer;
 }
 
-/* Zdjęcie produktu */
-/*.img {*/
-/*    width: 100%;*/
-/*    height:auto;*/
-/*}*/
+button[type="submit"]:active {
+    background: linear-gradient(#7df59f, #42de04);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 
 
-/*pojemnik*/
+.right-button {
+. box button;
+}
+
+
+/*container*/
+
 .container {
     /*display:table;*/
     height: 100%;
@@ -42,6 +47,7 @@ button[type="submit"] {
 
 /*nawigacja*/
 logo {
+    align-items: center;
     text-align: right;
     display: flex;
     align-items: center;
@@ -49,18 +55,23 @@ logo {
 }
 
 .logo-item {
+    text-align: right;
     text-decoration: none;
-    color: #8091ff; /* pomarańczowy */
+    color: #000000;
     font-size: 1.2em;
 }
 
 .logo-item.active {
-    color: #7d91f5;
+    color: #001072;
 }
 
 .cart {
     display: flex;
     align-items: center;
+}
+
+h4 {
+    text-align: right;
 }
 
 #cart_count {
@@ -70,25 +81,9 @@ logo {
 
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
 .shopping-cart {
     padding: 3% 0;
-    background-color: pink;
+    background-color: #62ff24;
     border-radius: 10px;
 }
 
@@ -170,16 +165,14 @@ nav .logo {
     width: 120px;
     height: 20px;
     font-size: 14px;
-    background: linear-gradient(#1B3309, #1b4bc5);
     border-radius: 30px;
 }
-
 
 /*****formularz*******************************************/
 
 form {
 
-    width: 100%;
+    width: 95%;
     background-color: #E9F6DF;
     padding: 20px;
     border: 2px solid #62C51B;

@@ -1,9 +1,8 @@
 <?php
-
 session_start();
 
+// przekierowanie użytkownika na stronę główną
 //if (!isset($_SESSION['email'])) {
-//// przekierowanie użytkownika na stronę główną
 //    header("Location: index.php");
 //    exit;
 //}
@@ -17,12 +16,11 @@ session_start();
     <title>Potwierdzenie</title>
     <meta http-equiv="X-Ua-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 <div class="container">
     <header>
-        <h1>E-mail ze szczegółami zamówienia został wysłany</h1>
+        <h1>E-mail ze szczegółami zamówienia został wysłany na podany email</h1>
     </header>
     <fieldset>
         <p class="content">Dziękujemy za dokonanie zakupu</p>

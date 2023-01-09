@@ -76,7 +76,7 @@ if (empty($city)) {
 
 // Tworzenie wiadomości
 $to = $email;
-$from = 'SKLEP ROWEROWY - PROJEKT TI Zajglic no-reply@localhost';
+$from = 'SKLEP - TI Zajglic no-reply@localhost';
 $replyTo = 'Biuro biuro@localhost';
 $subject = 'Potwierdzenie zamówienia';
 
@@ -88,7 +88,7 @@ $message = '
   </head>
   <body>
     <h1>Witaj ' . $name . ' ' . $surname . ',</h1>
-    <p>Dziękujemy za dokonanie zamówienia w naszym sklepie. Poniżej przedstawiamy szczegóły Twojego zamówienia:</p>
+    <p>Poniżej przedstawiamy szczegóły Twojego zamówienia:</p>
     <hr>
     <h2>Adres dostawy:</h2>
     <p>' . $street . ' ' . $house_number . '<br>
@@ -122,11 +122,10 @@ $message .= '
   <tr><b>Łączna kwota zamówienia:</b>
   <td style="border-left: 1px solid black;"><b>' . $total_price . ' zł</b></td>
   </tr>
-
   </table>
-  <p>Mamy nadzieję, że będziesz zadowolony z zakupów w naszym sklepie. Do zobaczenia wkrótce!</p>
+  <p>Dziękujemy za dokonanie zamówienia w naszym sklepie. Zapraszamy ponownie. </p>
   <p>Z poważaniem,</p>
-  <p>Zespół SKLEP ROWEROWY - PROJEKT TI Zajglic</p>
+  <p>Zespół sklepu</p>
   </body>
 
 </html>';
